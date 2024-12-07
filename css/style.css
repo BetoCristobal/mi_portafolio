@@ -19,7 +19,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
+    
 }
 
 .titulo{
@@ -98,7 +98,8 @@ body{
 }
 
 .btn-volver {
-    width: 10%;
+    min-width: 20%;
+    max-width: 20%;
     padding: 0.5rem 1rem;
     background-color: #ff5a5f;
     color: white;
@@ -110,6 +111,17 @@ body{
 
 .btn-volver:hover {
     background-color: #ff131b;
+}
+
+.imagenes{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.imagen-proyecto{
+    width: 12rem;
 }
 
 /* ------------------------------TEXTO---------------------------------------------- */
@@ -127,3 +139,57 @@ body{
 .icono-social:hover{
     transform: scale(1.2);
 }
+
+/* ------------------------------MEDIA QUERIES---------------------------------------------- */
+
+/*TABLETS*/
+@media (max-width: 768px){
+    .tarjeta{
+        max-width: 90%;
+        padding: 2rem;
+    }
+    .bloque-seccion-abajo{
+        min-width: 40%;
+        max-width: 40%;
+    }
+    .imagenes{
+        flex-direction: column;
+        align-items: center;
+    }
+    .imagen-proyecto{
+        width: 80%;
+        margin-bottom: 1rem;
+    }
+}
+
+/*MOVILES*/
+@media (max-width: 480px){
+    .tarjeta{
+        max-width: 95%;
+        padding: 1rem;
+    }
+    .seccion-abajo{
+        flex-direction: column;
+        align-items: center;
+    }
+    .bloque-seccion-abajo{
+        min-width: 100%;
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    .titulo h1{
+        font-size: 1.5rem;
+    }
+    .descripcion{
+        font-size: 0.9rem;
+    }
+    .icono-social{
+        width: 20%;
+    }
+    .btn-volver{
+        width: 50%;
+        font-size: 1rem;
+    }
+}
+
