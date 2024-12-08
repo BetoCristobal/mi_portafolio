@@ -5,12 +5,13 @@
 }
 
 #particles-js{
+    position: fixed;
     width: 100%;
     height: 100vh;
     background-color: black;
-    position: absolute;
     top: 0;
     left: 0;
+    z-index: -1;
 }
 
 body{
@@ -18,29 +19,38 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    margin: 0;
     
 }
 
 .titulo{
     text-align: center;
 }
+.contenedor-tarjeta{
+    max-height: 75vh;
+    width: auto;
+    max-width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+}
 
 .tarjeta {
-    height: auto;
+    max-height: 75vh;
     width: auto;
-    max-width: 50%;
+    max-width: 75%;
     background-color: rgba(0, 0, 0, 0.5);
-    position: relative;
     z-index: 10; /* Coloca la tarjeta encima del fondo */
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     text-align: justify;
     padding: 1%;
     color: white;
     border: 2px solid white;
+    overflow-y: auto;
 
     opacity: 0;
     animation: fadein 2s forwards;
@@ -48,8 +58,8 @@ body{
 
 .decoration-pc{
     position: absolute;
-    top: -60px;
-    left: 20px;
+    top: -55px;
+    left: 9rem;
     width: 50px;
     z-index: 15;
     animation: fade 2s;
@@ -66,9 +76,10 @@ body{
 }
 
 .bloque-seccion-abajo{       
-    min-width: 20%; 
+    min-width: 15%; 
     max-width: 20%;
     text-align: left;
+    margin: 20px;
 }
 
 .tarjeta-frontal, .tarjeta-detalles, .btn-volver{
@@ -121,7 +132,7 @@ body{
 }
 
 .imagen-proyecto{
-    width: 12rem;
+    width: 23%;
 }
 
 /* ------------------------------TEXTO---------------------------------------------- */
@@ -143,14 +154,19 @@ body{
 /* ------------------------------MEDIA QUERIES---------------------------------------------- */
 
 /*TABLETS*/
-@media (max-width: 768px){
+@media (max-width: 800px){
+    .contenedor-tarjeta{
+        max-height: 80%;
+    }
+
     .tarjeta{
-        max-width: 90%;
-        padding: 2rem;
+        max-height: 85vh;
+        max-width: 80%;
+        overflow-y: auto;
     }
     .bloque-seccion-abajo{
-        min-width: 40%;
-        max-width: 40%;
+        min-width: 10%;
+        max-width: 20%;
     }
     .imagenes{
         flex-direction: column;
@@ -163,10 +179,12 @@ body{
 }
 
 /*MOVILES*/
-@media (max-width: 480px){
+@media (max-width: 600px){
     .tarjeta{
         max-width: 95%;
         padding: 1rem;
+        overflow-y: auto;
+
     }
     .seccion-abajo{
         flex-direction: column;
@@ -188,8 +206,12 @@ body{
         width: 20%;
     }
     .btn-volver{
-        width: 50%;
-        font-size: 1rem;
+        min-width: 30%;
+        max-width: 30%;
+        margin: 20%;
+    }
+    ul{
+      list-style-type: none;  
     }
 }
 
